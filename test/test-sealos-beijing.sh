@@ -1,4 +1,18 @@
 #!/bin/bash
+# Copyright © 2021 sealos.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 # sh test.sh [k8s version] [package url] [sealos version]
 # sh test.sh 1.15.4 pkgurl 3.1.0
 # 如测试3.2.0-beta.2 版本 1.18.0版本离线包:
@@ -56,7 +70,7 @@ sleep 100 # wait for sshd
 # $2 is sealos clientip
 alias remotecmd="./sshcmd --passwd Fanux#123 --host $master0FIP --cmd"
 
-remotecmd "wget https://sealyun.oss-cn-beijing-internal.aliyuncs.com/v$3/sealos && chmod +x sealos && mv sealos /usr/bin"
+remotecmd "wget https://sealyun-home.oss-cn-beijing-internal.aliyuncs.com/sealos/v$3/sealos && chmod +x sealos && mv sealos /usr/bin"
 
 version=$1
 pkgurl=$2
